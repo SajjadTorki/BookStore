@@ -1,0 +1,16 @@
+{% extends '_base.html'%}
+
+{%block title_page%}Home Page | {{user.username}} {%endblock title_page%}
+
+
+
+
+{% block content_page %}
+<h1>Welcome </h1>
+{%if user.is_authenticated%}
+    <p>welcome {{user.username}} | <a href="{%url 'logout'%}">Log out</a></p>
+    {%else%}
+    <p><a href="{%url 'login'%}">Log In</a>|<a href="{%url 'singup'%}">Sign up</a></p>
+{%endif %}
+
+{% endblock content_page %}
