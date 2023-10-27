@@ -3,6 +3,7 @@ from django.views import generic
 from .forms import CustomUserCreationForm
 from django.urls import reverse_lazy
 
+
 # Create your views here.
 
 class SignupView(generic.CreateView):
@@ -11,6 +12,5 @@ class SignupView(generic.CreateView):
     success_url = reverse_lazy('home')
 
 
-
 def home_view(request):
-    return render(request,'home.html')
+    return render(request, 'home.html')
