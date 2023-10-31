@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+{% block title_page %}کتاب :  {{ book.title }}{% endblock title_page %}
+{% block content_page %}
+    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+
+        <h1> {{ book.title }}</h1>
+        <h3>{{ book.text }}</h3>
+        <h3>{{ book.author }}</h3>
+        <h3>{{ book.price }}</h3>
+        <div>
+            <button class="btn btn-secondary"><a href="{% url 'book_update' book.id %}" class="text-white">ویرایش</a>
+            </button>
+            <button class="btn btn-danger"><a href="{% url 'book_delete' book.id %}" class="text-white">حذف</a>
+            </button>
+
+        </div>
+    </div>
+
+    <h4><a href="{% url 'book_list' %}" class="text-black">لیست همه کتاب ها </a></h4>
+
+{% endblock content_page %}

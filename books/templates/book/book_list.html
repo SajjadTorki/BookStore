@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+{% block title_page %}لیست کتابها{% endblock title_page %}
+{% block content_page %}
+    <a href="{% url 'book_create' %}" class="btn btn-info m-3"> ثبت کتاب</a>
+    {% for book in books %}
+        <div class=" card shadow-lg p-3 mb-5 bg-body rounded">
+            <h1>
+                {{ book.title }}
+
+            </h1>
+            <div>
+
+                <a href="{{ book.get_absolute_url }}" class="btn btn-success m-3">جزییات</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock content_page %}

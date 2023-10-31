@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% block title_page %}حذف کتاب{% endblock title_page %}
+
+{% load crispy_forms_tags %}
+{% block content_page %}
+
+
+    <div class="container mt-5 ">
+    <h1>Are You want to delete : {{ book.title }}</h1>
+        <form action="" method="post">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-danger shadow-sm"> Are You want to delete ?</button>
+        </form>
+    </div>
+{% endblock content_page %}
