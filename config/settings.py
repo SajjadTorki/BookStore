@@ -37,12 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
-
     # third party
     'crispy_forms',
     'crispy_bootstrap4',
-
 
     # Local
     'accounts',
@@ -124,7 +121,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -136,13 +132,16 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-
 # crispy forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
-
-#Email Configuring '
+# Email Configuring '
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Static Files
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
