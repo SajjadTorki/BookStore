@@ -129,7 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # authentications setting
 AUTH_USER_MODEL = 'accounts.CustomUser'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'book_list'
 LOGOUT_REDIRECT_URL = 'home'
 
 # crispy forms
@@ -145,3 +145,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+# Media Files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
