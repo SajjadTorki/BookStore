@@ -11,6 +11,7 @@ from .forms import BookForm
 
 class BookListView(generic.ListView):
     model = Book
+    paginate_by = 4
     template_name = "book/book_list.html"
     context_object_name = 'books'
 
@@ -23,6 +24,7 @@ class BookDetailView(generic.DetailView):
 
 class BookCreateView(generic.CreateView):
     model = Book
+
     fields = ['title', 'author', 'description', 'price', 'cover']
     template_name = "book/book_new.html"
     success_url = reverse_lazy('book_list')
